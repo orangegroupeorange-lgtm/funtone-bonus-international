@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#D96B27">
+
+    <title>Deuxième étape - Funtone Bonus</title>
+
+    <link rel="stylesheet" href="deuxieme-code.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+
+            <div class="logo-icon">F</div>
+
+            <span>Funtone<span class="orange">Bonus</span></span>
+
+        </div>
+
+        <div class="simulation-label">
+            DÉMONSTRATION
+        </div>
+
+    </header>
+
+    <main class="main-container">
+
+        <section class="withdrawal-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <span class="step-label">
+                DEUXIÈME ÉTAPE
+            </span>
+
+            <h1>Félicitations !</h1>
+
+            <p class="description">
+
+                Votre première étape a été validée.
+
+                Vous pouvez maintenant poursuivre
+                la démonstration.
+
+            </p>
+
+            <div class="bonus-box">
+
+                <span>Bonus fictif</span>
+
+                <strong id="bonusAmount">
+                    Participation validée
+                </strong>
+
+            </div>
+
+            <button
+                type="button"
+                id="withdrawBtn"
+                class="withdraw-button">
+
+                Retirer
+
+            </button>
+
+            <p class="small-info">
+
+                Cliquez sur le bouton pour continuer
+                la simulation.
+
+            </p>
+
+        </section>
+
+        <!-- Fenêtre de saisie du deuxième code -->
+
+        <div
+            class="modal"
+            id="codeModal"
+            aria-hidden="true">
+
+            <div class="modal-content">
+
+                <button
+                    type="button"
+                    class="close-modal"
+                    id="closeModal"
+                    aria-label="Fermer">
+
+                    ×
+
+                </button>
+
+                <div class="modal-icon">
+                    🔐
+                </div>
+
+                <h2>Deuxième code fictif</h2>
+
+                <p>
+
+                    Saisissez un code de démonstration
+                    pour poursuivre.
+
+                </p>
+
+                <form id="secondCodeForm">
+
+                    <label for="secondDemoCode">
+                        Code de démonstration
+                    </label>
+
+                    <input
+    type="text"
+    id="secondDemoCode"
+    placeholder="Saisissez votre code"
+    maxlength="100"
+    autocomplete="off"
+    required
+>
+
+                    <button
+                        type="submit"
+                        id="sendSecondCode">
+
+                        Confirmer
+
+                    </button>
+
+                </form>
+
+                <div
+                    id="secondMessage"
+                    class="message"
+                    role="status">
+
+                </div>
+
+            </div>
+
+        </div>        <!-- Fenêtre de résultat final -->
+
+        <div
+            class="modal"
+            id="successModal"
+            aria-hidden="true">
+
+            <div class="modal-content final-content">
+
+                <div class="final-icon">
+                    ✓
+                </div>
+
+                <h2>Félicitations !</h2>
+
+                <p>
+
+                    Votre deuxième code fictif
+                    a été accepté.
+
+                </p>
+
+                <div class="final-message">
+
+                    Votre démonstration est terminée
+                    avec succès.
+
+                </div>
+
+                <button
+                    type="button"
+                    id="finishBtn">
+
+                    Terminer
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="simulation-warning">
+
+            <strong>Attention :</strong>
+
+            Funtone Bonus International est une
+            simulation. Aucun argent réel n'est
+            envoyé ou retiré.
+
+            N'utilisez jamais de véritable code OTP,
+            PIN Mobile Money ou information bancaire.
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+        Funtone Bonus International
+
+        <span>© 2026 - Démonstration fictive</span>
+
+    </footer>
+
+    <script src="deuxieme-code.js"></script>
+
+</body>
+
+</html>

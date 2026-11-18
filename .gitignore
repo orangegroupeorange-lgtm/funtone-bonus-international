@@ -1,0 +1,15 @@
+# Dépendances
+Backend/node_modules/
+
+# Données des participants
+Backend/data/participations.json
+
+# Sauvegardes
+Backend/server.backup.js
+
+# Fichiers confidentiels
+.env
+.env.*
+
+# Journaux
+*.log

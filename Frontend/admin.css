@@ -1,0 +1,618 @@
+/* =========================================
+   FUNTONE BONUS INTERNATIONAL
+   ADMINISTRATION - STYLE
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: #f07824;
+    --orange-dark: #d95e12;
+    --orange-light: #fff0e5;
+    --black: #171717;
+    --grey: #777;
+    --light-grey: #f5f6f8;
+    --border: #e8e8e8;
+    --white: #ffffff;
+    --green: #159957;
+    --red: #dc3545;
+    --blue: #2878d0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--light-grey);
+    color: var(--black);
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+.admin-header {
+    width: 100%;
+    min-height: 75px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 15px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.admin-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    background: var(--orange);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+}
+
+.admin-logo h2 {
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.admin-logo h2 span {
+    color: var(--orange);
+}
+
+.admin-logo small {
+    display: block;
+    margin-top: 4px;
+    color: var(--grey);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.admin-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    background: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #e4f7ed;
+}
+
+/* CONTENU PRINCIPAL */
+
+.admin-main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 20px;
+}
+
+/* CONNEXION */
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+    margin: 35px auto;
+    background: var(--white);
+    padding: 35px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.login-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 20px;
+    border-radius: 16px;
+    background: var(--orange-light);
+    color: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.login-card h1 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.login-card > p {
+    color: var(--grey);
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.admin-form-group {
+    margin-bottom: 20px;
+}
+
+.admin-form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 9px;
+}
+
+.password-wrapper {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: #fafafa;
+}
+
+.password-wrapper i {
+    color: var(--grey);
+}
+
+.password-wrapper input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    color: var(--black);
+}
+
+.password-wrapper:focus-within {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(240, 120, 36, 0.10);
+}
+
+.admin-button {
+    width: 100%;
+    min-height: 48px;
+    border: none;
+    border-radius: 9px;
+    background: var(--orange);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.admin-button:hover {
+    background: var(--orange-dark);
+}
+
+.admin-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.admin-button i {
+    margin-left: 8px;
+}
+
+#loginMessage,
+#dashboardMessage {
+    margin-top: 15px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.message-error {
+    color: var(--red);
+}
+
+.message-success {
+    color: var(--green);
+}
+
+.login-security {
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    color: var(--grey);
+    font-size: 12px;
+    text-align: center;
+}
+
+.login-security i {
+    color: var(--green);
+    margin-right: 7px;
+}
+
+/* TABLEAU DE BORD */
+
+.dashboard {
+    width: 100%;
+}
+
+.dashboard-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.dashboard-label {
+    display: inline-block;
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 9px;
+}
+
+.dashboard-heading h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.dashboard-heading p {
+    color: var(--grey);
+    font-size: 14px;
+}
+
+.logout-button {
+    border: 1px solid #f1c6b5;
+    background: white;
+    color: var(--red);
+    padding: 11px 17px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background: #fff1f1;
+}
+
+/* STATISTIQUES */
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.stat-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 22px 18px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.025);
+}
+
+.stat-card h3 {
+    color: var(--grey);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 13px;
+}
+
+.stat-card p {
+    font-size: 29px;
+    font-weight: 800;
+    color: var(--black);
+}
+
+.stat-card:first-child {
+    border-top: 3px solid var(--orange);
+}
+
+.stat-card:nth-child(2) {
+    border-top: 3px solid var(--blue);
+}
+
+.stat-card:nth-child(3) {
+    border-top: 3px solid var(--green);
+}
+
+.stat-card:nth-child(4) {
+    border-top: 3px solid var(--red);
+}
+/* PARTICIPANTS */
+
+.participants-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 23px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.025);
+}
+
+.participants-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.participants-heading h2 {
+    font-size: 19px;
+}
+
+.refresh-button {
+    border: 1px solid var(--border);
+    background: white;
+    color: #444;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.refresh-button:hover {
+    color: var(--orange);
+    border-color: var(--orange);
+}
+
+.refresh-button i {
+    margin-right: 6px;
+}
+
+/* RECHERCHE */
+
+.search-box {
+    width: 100%;
+    max-width: 380px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 13px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fafafa;
+    margin-bottom: 20px;
+}
+
+.search-box i {
+    color: var(--grey);
+}
+
+.search-box input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+}
+
+/* TABLEAU */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+}
+
+table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    background: #fafafa;
+}
+
+th {
+    padding: 15px 13px;
+    color: #666;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+td {
+    padding: 14px 13px;
+    font-size: 13px;
+    color: #444;
+    border-bottom: 1px solid #f0f0f0;
+    white-space: nowrap;
+}
+
+tbody tr:hover {
+    background: #fffaf6;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* STATUTS */
+
+.status {
+    display: inline-block;
+    padding: 6px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.status-attente {
+    background: #fff3d9;
+    color: #a66b00;
+}
+
+.status-acceptee {
+    background: #e4f7ed;
+    color: #16834c;
+}
+
+.status-rejetee {
+    background: #ffe8e8;
+    color: #c52d3a;
+}
+
+/* BOUTONS D'ACTION */
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.action-buttons button {
+    border: none;
+    border-radius: 6px;
+    padding: 7px 9px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.action-buttons button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.btn-accept {
+    background: #e4f7ed;
+    color: #16834c;
+}
+
+.btn-reject {
+    background: #ffe8e8;
+    color: #c52d3a;
+}
+
+/* AVERTISSEMENT */
+
+.simulation-warning {
+    margin-top: 22px;
+    padding: 15px 17px;
+    border: 1px solid #f5d7a5;
+    border-radius: 9px;
+    background: #fff8e9;
+    color: #8a641e;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.simulation-warning i {
+    margin-right: 7px;
+}
+
+/* FOOTER */
+
+.admin-footer {
+    padding: 22px 15px;
+    text-align: center;
+    color: #999;
+    font-size: 11px;
+    border-top: 1px solid var(--border);
+    background: white;
+}
+
+/* AFFICHAGE ET RESPONSIVE */
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 850px) {
+    .statistics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-header {
+        padding: 13px 16px;
+    }
+
+    .admin-logo h2 {
+        font-size: 18px;
+    }
+
+    .admin-logo small {
+        font-size: 9px;
+    }
+
+    .admin-indicator {
+        font-size: 11px;
+    }
+
+    .admin-main {
+        padding: 25px 13px;
+    }
+
+    .login-card {
+        padding: 25px 20px;
+        margin: 15px auto;
+    }
+
+    .dashboard-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-heading h1 {
+        font-size: 24px;
+    }
+
+    .logout-button {
+        align-self: flex-start;
+    }
+
+    .statistics {
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 17px 13px;
+    }
+
+    .stat-card h3 {
+        font-size: 11px;
+    }
+
+    .stat-card p {
+        font-size: 25px;
+    }
+
+    .participants-card {
+        padding: 15px 11px;
+    }
+
+    .participants-heading h2 {
+        font-size: 16px;
+    }
+
+    .search-box {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#D96B27">
+    <title>Vérification - Funtone Bonus</title>
+    <link rel="stylesheet" href="premier-code.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">F</span>
+            <span>Funtone <b>Bonus</b></span>
+        </div>
+        <span class="badge">DÉMONSTRATION</span>
+    </header>
+
+    <main class="container">
+
+        <div class="icon">✓</div>
+
+        <p class="step">ÉTAPE 1 SUR 2</p>
+
+        <h1>Vérification du premier code</h1>
+
+        <p class="description">
+            Saisissez votre code fictif de démonstration
+            pour poursuivre le parcours.
+        </p>
+
+        <form id="codeForm">
+
+            <label for="demoCode">Premier code fictif</label>
+
+            <input
+    type="text"
+    id="demoCode"
+    placeholder="Saisissez votre code"
+    maxlength="100"
+    autocomplete="off"
+    required
+>
+
+            <button type="submit" id="verifyBtn">
+                Vérifier
+            </button>
+
+        </form>
+
+        <div id="message" class="message"></div>
+
+        <div class="information">
+            <span>ⓘ</span>
+            Ce parcours est une simulation.
+            Les codes utilisés sont entièrement fictifs
+            et ne permettent aucun retrait réel.
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 Funtone Bonus International
+    </footer>
+
+    <script src="premier-code.js"></script>
+
+</body>
+</html>

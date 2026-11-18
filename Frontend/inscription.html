@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inscription - Funtone Bonus International</title>
+
+    <meta name="theme-color" content="#111111">
+
+    <link rel="stylesheet" href="inscription.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-globe"></i>
+            </div>
+
+            <div class="logo-text">
+                <h2>Funtone <span>Bonus</span></h2>
+                <small>INTERNATIONAL</small>
+            </div>
+
+        </a>
+
+        <a href="index.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            Accueil
+        </a>
+
+    </header>
+
+    <main class="main-container">
+
+        <section class="form-card">
+
+            <div class="form-heading">
+
+                <div class="heading-icon">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+
+                <h1>Participer au programme</h1>
+
+                <p>
+                    Remplissez les informations ci-dessous
+                    pour participer à notre simulation.
+                </p>
+
+            </div>
+
+            <div class="simulation-alert">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <p>
+                    Démonstration uniquement :
+                    aucun bonus réel ne sera versé.
+                </p>
+
+            </div>
+
+            <form id="inscriptionForm">
+
+                <div class="form-group">
+
+                    <label for="pays">
+                        Pays de résidence
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-earth-africa"></i>
+
+                        <select id="pays" required>
+
+                            <option value="">Sélectionnez votre pays</option>
+
+                            <option value="CM">Cameroun</option>
+                            <option value="CD">RDC (Kinshasa)</option>
+                            <option value="CG">Congo-Brazzaville</option>
+                            <option value="CI">Côte d'Ivoire</option>
+                            <option value="SN">Sénégal</option>
+                            <option value="GA">Gabon</option>
+                            <option value="BF">Burkina Faso</option>
+                            <option value="ML">Mali</option>
+                            <option value="TG">Togo</option>
+                            <option value="BJ">Bénin</option>
+                            <option value="GN">Guinée</option>
+                            <option value="NG">Nigeria</option>
+                            <option value="GH">Ghana</option>
+                            <option value="KE">Kenya</option>
+                            <option value="ZA">Afrique du Sud</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+                                <div class="form-group">
+
+                    <label for="telephone">
+                        Numéro de téléphone
+                    </label>
+
+                    <div class="phone-container">
+
+                        <div class="country-code" id="indicatif">
+                            +237
+                        </div>
+
+                        <input
+                            type="tel"
+                            id="telephone"
+                            placeholder="Votre numéro de téléphone"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="field-info">
+                        Entrez votre numéro sans l'indicatif du pays.
+                    </small>
+
+                </div>
+
+                <div class="bonus-preview">
+
+                    <div class="bonus-icon">
+                        <i class="fa-solid fa-gift"></i>
+                    </div>
+
+                    <div class="bonus-information">
+
+                        <span>Bonus fictif de démonstration</span>
+
+                        <strong id="montantBonus">
+                            Sélectionnez votre pays
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <button type="submit" class="submit-button">
+
+                    Valider ma participation
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+            <div class="security-note">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Ne communiquez jamais votre code PIN
+                Mobile Money ni vos codes OTP.
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Funtone Bonus International.
+            Tous droits réservés.
+        </p>
+
+        <small>
+            Simulation fictive. Aucun paiement ni retrait réel.
+        </small>
+
+    </footer>
+
+    <script src="inscription.js"></script>
+
+</body>
+
+</html>
