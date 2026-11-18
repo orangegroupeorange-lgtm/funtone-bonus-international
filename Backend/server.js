@@ -313,21 +313,13 @@ function protegerAdmin(req, res, next) {
 
     res.setHeader("Cache-Control", "no-store");
 
-    if (!estAccesLocal(req)) {
-
-        return res.status(404).json({
-            success: false,
-            message: "Page introuvable."
-        });
-    }
-
     const session = obtenirSession(req);
 
     if (!session) {
 
         return res.status(401).json({
             success: false,
-            message: "Accès administrateur non autorisé."
+            message: "Connexion administrateur requise."
         });
     }
 
@@ -750,32 +742,71 @@ app.get("/api/demo-codes/second/:reference", (req, res) => {
 
 app.get("/admin.html", (req, res) => {
 
-    if (!estAccesLocal(req)) {
-
-        return res.status(404).send(
-            "Page introuvable."
-        );
-    }
-
-    const identifiant = crypto.randomBytes(32).toString("hex");
-
-    sessions.set(identifiant, {
-
-        expiration: Date.now() + SESSION_DURATION
-    });
-
-    res.setHeader(
-        "Set-Cookie",
-
-        "admin_session=" + identifiant +
-        "; HttpOnly; SameSite=Strict; Path=/; Max-Age=7200"
-    );
-
     res.setHeader("Cache-Control", "no-store");
 
     return res.sendFile(
         path.join(FRONTEND, "admin.html")
     );
+});
+
+// ============================================
+// CONNEXION ADMINISTRATEUR
+// ============================================
+
+app.post("/api/admin/login", (req, res) => {
+
+    const motDePasse = process.env.ADMIN_PASSWORD;
+
+    if (!motDePasse || motDePasse.length < 16) {
+
+        return res.status(503).json({
+            success: false,
+            message: "Configuration administrateur indisponible."
+        });
+    }
+
+    const fourni = typeof req.body.password === "string"
+        ? req.body.password
+        : "";
+
+    const attenduBuffer = Buffer.from(motDePasse);
+    const fourniBuffer = Buffer.from(fourni);
+
+    if (
+        fourniBuffer.length !== attenduBuffer.length ||
+        !crypto.timingSafeEqual(fourniBuffer, attenduBuffer)
+    ) {
+
+        return res.status(401).json({
+            success: false,
+            message: "Mot de passe incorrect."
+        });
+    }
+
+    const identifiant = crypto.randomBytes(32).toString("hex");
+
+    sessions.set(identifiant, {
+        expiration: Date.now() + SESSION_DURATION
+    });
+
+    const secure = process.env.NODE_ENV === "production"
+        ? "; Secure"
+        : "";
+
+    res.setHeader(
+        "Set-Cookie",
+        "admin_session=" + identifiant +
+        "; HttpOnly; SameSite=Strict; Path=/; Max-Age=7200" +
+        secure
+    );
+
+    res.setHeader("Cache-Control", "no-store");
+
+    return res.json({
+        success: true,
+        authenticated: true,
+        message: "Connexion réussie."
+    });
 });
 
 // ============================================

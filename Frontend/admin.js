@@ -117,6 +117,62 @@ async function requete(url, options = {}) {
 }
 
 // ============================================
+// CONNEXION ADMINISTRATEUR
+// ============================================
+
+const adminLoginForm = document.getElementById("adminLoginForm");
+
+const adminPassword = document.getElementById("adminPassword");
+
+const loginMessage = document.getElementById("loginMessage");
+
+if (adminLoginForm) {
+
+    adminLoginForm.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+        const motDePasse = adminPassword.value;
+
+        try {
+
+            const resultat = await requete(
+                "/api/admin/login",
+                {
+                    method: "POST",
+                    body: JSON.stringify({
+                        password: motDePasse
+                    })
+                }
+            );
+
+            if (resultat.success) {
+
+                adminPassword.value = "";
+
+                afficherDashboard();
+
+                afficherMessage(
+                    loginMessage,
+                    "Connexion réussie.",
+                    "succes"
+                );
+
+                await chargerParticipations();
+            }
+
+        } catch (erreur) {
+
+            afficherMessage(
+                loginMessage,
+                erreur.message,
+                "erreur"
+            );
+        }
+    });
+}
+
+// ============================================
 // VÉRIFIER LA SESSION ADMINISTRATEUR
 // ============================================
 
@@ -125,6 +181,10 @@ async function verifierSession() {
     try {
 
         await requete("/api/admin/me");
+
+        if (loginCard) {
+            loginCard.hidden = true;
+        }
 
         afficherDashboard();
 
@@ -136,11 +196,13 @@ async function verifierSession() {
             dashboard.hidden = true;
         }
 
-        afficherMessage(
-            dashboardMessage,
-            "Accès refusé. Ouvre ton lien privé pour accéder à l'administration.",
-            "erreur"
-        );
+        if (loginCard) {
+            loginCard.hidden = false;
+        }
+
+        if (adminPassword) {
+            adminPassword.value = "";
+        }
     }
 }
 
