@@ -310,7 +310,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!donnees.reference) {
 
                 throw new Error(
-                    "La référence de démonstration est absente."
+                    "La référence est absente."
                 );
             }
 
@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 "Participation enregistrée !",
 
-                "Votre participation de démonstration est enregistrée. Aucun bonus réel ne sera versé. Conservez votre référence pour continuer.",
+                "Votre participation a été enregistrée.",
 
                 donnees.reference
 

