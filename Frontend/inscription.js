@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
             boutonContinuer.type = "button";
 
             boutonContinuer.textContent =
-                "Continuer vers la démonstration";
+                "Continuer";
 
             boutonContinuer.style.cssText = `
                 display: block;
